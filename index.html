@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="message"> Welcome IITU student!</div>
+
+<div class="wrapper">
+    <div class="title">
+      Registration Form
+    </div>
+
+<button onclick="myFunction()">Click me</button>
+
+<div id="myDIV">
+Welcome to the registration page of IITU canteen! 
+</div>
+
+
+    <form>
+    <div class="form">
+       <div class="inputfield">
+          <label>Name or ID</label>
+          <input type="text" class="input" id="name" required> </div>
+         
+       <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input" id="psw" required>
+       </div>  
+      <div class="inputfield">
+          <label>Confirm Password</label>
+          <input type="password" class="input">
+       </div> 
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input type="text" class="input" id="email" required>
+       </div> 
+      <div class="inputfield">
+          <label>Phone Number</label>
+          <input type="text" class="input" required>
+       </div> 
+      <div class="inputfield">
+          <label>Address</label>
+          <p><a href="https://www.google.kz/maps/@49.5219664,68.6505615,5z?hl=ru">Map </a></p>
+          <textarea class="textarea"></textarea>
+          
+       </div> 
+      <div class="inputfield">
+          <label>Card Number</label>
+          <input type="text" class="input">
+       </div> 
+       <div class="inputfield">
+          <label>CVV</label>
+          <input type="text" class="input">
+       </div> 
+       
+      <div class="inputfield">
+        <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+        
+      </div>
+    </div>
+  </form>
+</div>  
+</form>
+  <script>
+function saveData()
+{
+let name,email,psw;
+name=document.getElementById("name").value;
+email=document.getElementById("email").value;
+
+psw=document.getElementById("psw").value;
+
+localStorage.setItem("name",name)
+localStorage.setItem("email",email)
+localStorage.setItem("psw",psw)
+}
+          
+
+          $('#message').show(1000, function(){
+            setTimeout(function(){
+              $('#message').hide(500);
+  }, 5000);
+});
+          function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+          </script>
+</body>
+</html>
